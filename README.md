@@ -13,19 +13,21 @@ alongside the image in the registry.
 
 Each published image is a multi-arch (`linux/amd64` + `linux/arm64`) build carrying:
 
-- **Signed SLSA provenance** — a Sigstore (keyless) attestation proving the image was built by Primodel's
-  GitHub Actions pipeline from a specific commit. Verifiable against the **public image**, no source
-  access required.
+- **A cosign signature + SLSA provenance** — a Sigstore (keyless) signature proving the image was
+  published by Primodel's GitHub Actions pipeline, plus provenance recording the commit it was built
+  from. Verifiable against the **public image**, no source access required.
 - **An SBOM** — the full dependency inventory (NuGet, npm, OS packages) for your vulnerability scanners.
 
 ## Verify a release
 
 You only need the public image reference. Replace `<version>` with a tag (e.g. `1.0.0`).
 
-**Provenance — prove it's genuinely from Primodel:**
+**Signature — prove it's genuinely from Primodel:**
 
 ```bash
-gh attestation verify oci://ghcr.io/primodel/primodel:<version> --repo Wadman-IT/Primodel
+cosign verify ghcr.io/primodel/primodel:<version> \
+  --certificate-identity-regexp '^https://github.com/Wadman-IT/Primodel/\.github/workflows/.*' \
+  --certificate-oidc-issuer https://token.actions.githubusercontent.com
 ```
 
 **SBOM — get the dependency inventory:**
