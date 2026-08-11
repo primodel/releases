@@ -4,27 +4,11 @@ _See release history._
 
 **SBOM:** [`sbom/primodel-1.0.0.spdx.json`](./sbom/primodel-1.0.0.spdx.json)
 
-## v1.0.0 — 2026-08-11
-
-_See release history._
-
-**SBOM:** [`sbom/primodel-1.0.0.spdx.json`](./sbom/primodel-1.0.0.spdx.json)
-
-## v1.0.0 — 2026-08-11
-
-_See release history._
-
-**SBOM:** [`sbom/primodel-1.0.0.spdx.json`](./sbom/primodel-1.0.0.spdx.json)
-
 # Changelog
 
 All notable changes to Primodel are documented here. This is the public, source-free changelog for the
 `ghcr.io/primodel/primodel` image. The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and Primodel aims to follow [Semantic Versioning](https://semver.org/).
-
-## [Unreleased]
-
-Pre-GA. Primodel is not yet generally available; the image and this changelog become public at launch.
 
 <!--
 Template for each release:
