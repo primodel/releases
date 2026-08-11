@@ -1,3 +1,9 @@
+## v1.0.0 — 2026-08-11
+
+_See release history._
+
+**SBOM:** [`sbom/primodel-1.0.0.spdx.json`](./sbom/primodel-1.0.0.spdx.json)
+
 # Changelog
 
 All notable changes to Primodel are documented here. This is the public, source-free changelog for the
