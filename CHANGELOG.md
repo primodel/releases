@@ -1,3 +1,9 @@
+## v1.4.0 — 2026-08-28
+
+_See release history._
+
+**SBOM:** [`sbom/primodel-1.4.0.spdx.json`](./sbom/primodel-1.4.0.spdx.json)
+
 ## v1.3.0 — 2026-08-25
 
 _See release history._
