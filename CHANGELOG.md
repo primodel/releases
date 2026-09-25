@@ -1,3 +1,9 @@
+## v3.1.2 — 2026-09-25
+
+_See release history._
+
+**SBOM:** [`primodel-3.1.2-linux-amd64.spdx.json`](./sbom/primodel-3.1.2-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-3.1.2-linux-arm64.spdx.json) · [combined](./sbom/primodel-3.1.2.spdx.json)
+
 ## v3.0.0 — 2026-09-22
 
 _See release history._
