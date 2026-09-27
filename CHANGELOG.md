@@ -1,3 +1,14 @@
+## v3.1.9 — 2026-09-27
+
+_See release history._
+
+**SBOM:** [`primodel-3.1.9-linux-amd64.spdx.json`](./sbom/primodel-3.1.9-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-3.1.9-linux-arm64.spdx.json) · [combined](./sbom/primodel-3.1.9.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:3.1.9
+```
+
 ## v3.1.8 — 2026-09-27
 
 _See release history._
