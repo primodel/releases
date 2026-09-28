@@ -1,3 +1,19 @@
+## v3.1.11 — 2026-09-28
+
+## [3.1.11](https://github.com/Wadman-IT/Primodel/compare/v3.1.10...v3.1.11) (2026-09-28)
+
+
+### Bug Fixes
+
+* **ci:** check out the repository in the merge job, which two steps already needed ([#102](https://github.com/Wadman-IT/Primodel/issues/102)) ([1f14110](https://github.com/Wadman-IT/Primodel/commit/1f141106ccc8c832ade372b9f3104cbcb22fae37))
+
+**SBOM:** [`primodel-3.1.11-linux-amd64.spdx.json`](./sbom/primodel-3.1.11-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-3.1.11-linux-arm64.spdx.json) · [combined](./sbom/primodel-3.1.11.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:3.1.11
+```
+
 ## v3.1.9 — 2026-09-27
 
 _See release history._
