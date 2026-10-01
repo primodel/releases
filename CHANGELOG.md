@@ -1,3 +1,23 @@
+## v4.0.0 — 2026-10-01
+
+## [4.0.0](https://github.com/Wadman-IT/Primodel/compare/v3.1.12...v4.0.0) (2026-10-01)
+
+
+### ⚠ BREAKING CHANGES
+
+* rename the integration concept to pipeline ([#111](https://github.com/Wadman-IT/Primodel/issues/111))
+
+### Features
+
+* rename the integration concept to pipeline ([#111](https://github.com/Wadman-IT/Primodel/issues/111)) ([c4da810](https://github.com/Wadman-IT/Primodel/commit/c4da8109aeaebf5b12cd0c82b4f09b57bb9ec1ca))
+
+**SBOM:** [`primodel-4.0.0-linux-amd64.spdx.json`](./sbom/primodel-4.0.0-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-4.0.0-linux-arm64.spdx.json) · [combined](./sbom/primodel-4.0.0.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:4.0.0
+```
+
 ## v3.1.12 — 2026-10-01
 
 ## [3.1.12](https://github.com/Wadman-IT/Primodel/compare/v3.1.11...v3.1.12) (2026-10-01)
