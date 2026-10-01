@@ -1,3 +1,21 @@
+## v3.1.12 — 2026-10-01
+
+## [3.1.12](https://github.com/Wadman-IT/Primodel/compare/v3.1.11...v3.1.12) (2026-10-01)
+
+
+### Bug Fixes
+
+* assert the patched curl lands in the image ([#110](https://github.com/Wadman-IT/Primodel/issues/110)) ([72b5083](https://github.com/Wadman-IT/Primodel/commit/72b5083474b4f6a630d227932278a92e8e11e327))
+* bump js-yaml to 5.4.2 (GHSA-r3ph-w7gj-g6xm) ([#106](https://github.com/Wadman-IT/Primodel/issues/106)) ([c4ea244](https://github.com/Wadman-IT/Primodel/commit/c4ea244926298519c3b39c3d619ee52fad68f83a))
+* clear every remaining vulnerable dependency in app and web ([#108](https://github.com/Wadman-IT/Primodel/issues/108)) ([4cb0bdb](https://github.com/Wadman-IT/Primodel/commit/4cb0bdb5bdb251b9aa8cd8b455416efe7bcc6f78))
+
+**SBOM:** [`primodel-3.1.12-linux-amd64.spdx.json`](./sbom/primodel-3.1.12-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-3.1.12-linux-arm64.spdx.json) · [combined](./sbom/primodel-3.1.12.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:3.1.12
+```
+
 ## v3.1.11 — 2026-09-28
 
 ## [3.1.11](https://github.com/Wadman-IT/Primodel/compare/v3.1.10...v3.1.11) (2026-09-28)
