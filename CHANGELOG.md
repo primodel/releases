@@ -1,3 +1,19 @@
+## v4.0.1 — 2026-10-01
+
+## [4.0.1](https://github.com/Wadman-IT/Primodel/compare/v4.0.0...v4.0.1) (2026-10-01)
+
+
+### Bug Fixes
+
+* restore the schema the migration reset silently dropped ([#115](https://github.com/Wadman-IT/Primodel/issues/115)) ([ba1415a](https://github.com/Wadman-IT/Primodel/commit/ba1415a5b98ed5a39da36cff1fe1cdbfecf9e306))
+
+**SBOM:** [`primodel-4.0.1-linux-amd64.spdx.json`](./sbom/primodel-4.0.1-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-4.0.1-linux-arm64.spdx.json) · [combined](./sbom/primodel-4.0.1.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:4.0.1
+```
+
 ## v4.0.0 — 2026-10-01
 
 ## [4.0.0](https://github.com/Wadman-IT/Primodel/compare/v3.1.12...v4.0.0) (2026-10-01)
