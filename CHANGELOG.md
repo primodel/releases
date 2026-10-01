@@ -1,3 +1,19 @@
+## v4.0.2 — 2026-10-01
+
+## [4.0.2](https://github.com/Wadman-IT/Primodel/compare/v4.0.1...v4.0.2) (2026-10-01)
+
+
+### Bug Fixes
+
+* reference mappings, and stop the SPA shell answering for removed API routes ([#117](https://github.com/Wadman-IT/Primodel/issues/117)) ([2ac39bd](https://github.com/Wadman-IT/Primodel/commit/2ac39bdb06eed67a8339a60677ac41b5247f8b6f))
+
+**SBOM:** [`primodel-4.0.2-linux-amd64.spdx.json`](./sbom/primodel-4.0.2-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-4.0.2-linux-arm64.spdx.json) · [combined](./sbom/primodel-4.0.2.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:4.0.2
+```
+
 ## v4.0.1 — 2026-10-01
 
 ## [4.0.1](https://github.com/Wadman-IT/Primodel/compare/v4.0.0...v4.0.1) (2026-10-01)
