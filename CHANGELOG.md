@@ -1,3 +1,19 @@
+## v4.0.3 — 2026-10-02
+
+## [4.0.3](https://github.com/Wadman-IT/Primodel/compare/v4.0.2...v4.0.3) (2026-10-02)
+
+
+### Bug Fixes
+
+* raise Primodel image openssl/libssl3t64 floor to 3.0.13-0ubuntu3.16 ([#120](https://github.com/Wadman-IT/Primodel/issues/120)) ([9fe729c](https://github.com/Wadman-IT/Primodel/commit/9fe729c50cef4ea7cc035715d71176d96b3c8542))
+
+**SBOM:** [`primodel-4.0.3-linux-amd64.spdx.json`](./sbom/primodel-4.0.3-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-4.0.3-linux-arm64.spdx.json) · [combined](./sbom/primodel-4.0.3.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:4.0.3
+```
+
 ## v4.0.2 — 2026-10-01
 
 ## [4.0.2](https://github.com/Wadman-IT/Primodel/compare/v4.0.1...v4.0.2) (2026-10-01)
