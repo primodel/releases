@@ -1,3 +1,23 @@
+## v5.0.0 — 2026-10-04
+
+## [5.0.0](https://github.com/Wadman-IT/Primodel/compare/v4.0.3...v5.0.0) (2026-10-04)
+
+
+### ⚠ BREAKING CHANGES
+
+* Data Product materialization is removed from the API and UI, and its columns are dropped. Egress pipelines using the Govern transform now withhold unclassified fields above the ceiling unless explicitly allowed. Plugins built against a different Primodel.Sdk major are refused.
+
+### Refactoring
+
+* route every engine call through the provider seam ([#249](https://github.com/Wadman-IT/Primodel/issues/249)) ([d22742d](https://github.com/Wadman-IT/Primodel/commit/d22742d009ad416fbd29f2857ade75d2b1ce4173))
+
+**SBOM:** [`primodel-5.0.0-linux-amd64.spdx.json`](./sbom/primodel-5.0.0-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.0.0-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.0.0.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.0.0
+```
+
 ## v4.0.3 — 2026-10-02
 
 ## [4.0.3](https://github.com/Wadman-IT/Primodel/compare/v4.0.2...v4.0.3) (2026-10-02)
