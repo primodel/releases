@@ -1,3 +1,19 @@
+## v5.0.2 — 2026-10-04
+
+## [5.0.2](https://github.com/Wadman-IT/Primodel/compare/v5.0.1...v5.0.2) (2026-10-04)
+
+
+### Bug Fixes
+
+* evolve existing silver tables on the REST catalog and re-export on upgrade ([#263](https://github.com/Wadman-IT/Primodel/issues/263)) ([2189576](https://github.com/Wadman-IT/Primodel/commit/2189576e1d869c79ecfd1c0d165add4b5420a48d))
+
+**SBOM:** [`primodel-5.0.2-linux-amd64.spdx.json`](./sbom/primodel-5.0.2-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.0.2-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.0.2.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.0.2
+```
+
 ## v5.0.1 — 2026-10-04
 
 ## [5.0.1](https://github.com/Wadman-IT/Primodel/compare/v5.0.0...v5.0.1) (2026-10-04)
