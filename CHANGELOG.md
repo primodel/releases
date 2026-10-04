@@ -1,3 +1,21 @@
+## v5.0.1 — 2026-10-04
+
+## [5.0.1](https://github.com/Wadman-IT/Primodel/compare/v5.0.0...v5.0.1) (2026-10-04)
+
+
+### Bug Fixes
+
+* auto-upgrade bundled plugins so an upgraded install does not strand them ([#259](https://github.com/Wadman-IT/Primodel/issues/259)) ([243ee30](https://github.com/Wadman-IT/Primodel/commit/243ee306890451d5064057cc00995a2ad72b0738))
+* expand reference fields and de-dupe rows in silver Iceberg tables ([#252](https://github.com/Wadman-IT/Primodel/issues/252)) ([421f135](https://github.com/Wadman-IT/Primodel/commit/421f13597d645ed3d057d300af553d9fec91df80))
+* honour the egress allowlist everywhere and stop secrets following a changed endpoint ([#255](https://github.com/Wadman-IT/Primodel/issues/255)) ([02acacb](https://github.com/Wadman-IT/Primodel/commit/02acacb4a0e6a76cdd1e2d43ce8391c6c3713761))
+
+**SBOM:** [`primodel-5.0.1-linux-amd64.spdx.json`](./sbom/primodel-5.0.1-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.0.1-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.0.1.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.0.1
+```
+
 ## v5.0.0 — 2026-10-04
 
 ## [5.0.0](https://github.com/Wadman-IT/Primodel/compare/v4.0.3...v5.0.0) (2026-10-04)
