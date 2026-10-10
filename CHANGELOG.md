@@ -1,3 +1,20 @@
+## v5.1.1 — 2026-10-10
+
+## [5.1.1](https://github.com/Wadman-IT/Primodel/compare/v5.1.0...v5.1.1) (2026-10-10)
+
+
+### Bug Fixes
+
+* **demo-seed:** deliver the Oracle payee leg in Replace mode ([#292](https://github.com/Wadman-IT/Primodel/issues/292)) ([2c3e269](https://github.com/Wadman-IT/Primodel/commit/2c3e269fd182d038ca1b0b1a585dd588d1cc3d04))
+* upgrade every OS package in the image and pin source-map-js to 1.2.2 ([#294](https://github.com/Wadman-IT/Primodel/issues/294)) ([c81b617](https://github.com/Wadman-IT/Primodel/commit/c81b617793f3ce62d666f3b901cfc6b9e6b96462))
+
+**SBOM:** [`primodel-5.1.1-linux-amd64.spdx.json`](./sbom/primodel-5.1.1-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.1.1-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.1.1.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.1.1
+```
+
 ## v5.1.0 — 2026-10-10
 
 ## [5.1.0](https://github.com/Wadman-IT/Primodel/compare/v5.0.2...v5.1.0) (2026-10-07)
