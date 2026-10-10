@@ -1,3 +1,19 @@
+## v5.1.2 — 2026-10-10
+
+## [5.1.2](https://github.com/Wadman-IT/Primodel/compare/v5.1.1...v5.1.2) (2026-10-10)
+
+
+### Bug Fixes
+
+* **demo-seed:** run egress pipelines correctly, roll back fully, and deliver to Oracle ([#327](https://github.com/Wadman-IT/Primodel/issues/327)) ([4318c2a](https://github.com/Wadman-IT/Primodel/commit/4318c2a3a69ec016b112d62f99ae4c9c83580e0d))
+
+**SBOM:** [`primodel-5.1.2-linux-amd64.spdx.json`](./sbom/primodel-5.1.2-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.1.2-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.1.2.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.1.2
+```
+
 ## v5.1.1 — 2026-10-10
 
 ## [5.1.1](https://github.com/Wadman-IT/Primodel/compare/v5.1.0...v5.1.1) (2026-10-10)
