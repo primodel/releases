@@ -1,3 +1,32 @@
+## v5.1.0 — 2026-10-10
+
+## [5.1.0](https://github.com/Wadman-IT/Primodel/compare/v5.0.2...v5.1.0) (2026-10-07)
+
+
+### Features
+
+* **demo-seed:** seed the HR egress pipelines and roll back the lake pipeline on failure ([#291](https://github.com/Wadman-IT/Primodel/issues/291)) ([45053b6](https://github.com/Wadman-IT/Primodel/commit/45053b6baf38ba7c8d7f39d0ffb33916cc48f03d))
+
+
+### Bug Fixes
+
+* apply copilot settings without a restart and separate text around tool calls ([#278](https://github.com/Wadman-IT/Primodel/issues/278)) ([510b04e](https://github.com/Wadman-IT/Primodel/commit/510b04eb097bf4af99d7e9a77d89091ca14097db))
+* construct the relationship FK resolver in IngestExecutor ([#288](https://github.com/Wadman-IT/Primodel/issues/288)) ([4945476](https://github.com/Wadman-IT/Primodel/commit/4945476c6ea0d33100b8e29aaee85f6e0334ecf0))
+* enforce credential grants and allow credential references for every adapter secret ([#281](https://github.com/Wadman-IT/Primodel/issues/281)) ([9fbf3d9](https://github.com/Wadman-IT/Primodel/commit/9fbf3d954e4316daa30e60bdce23b1c9770eb3e1))
+* instrument plugin package install and stabilise its tests under load ([#284](https://github.com/Wadman-IT/Primodel/issues/284)) ([9fcdc49](https://github.com/Wadman-IT/Primodel/commit/9fcdc495726c3d8d3942dcd1ba5e6aa35f137329))
+* move to Parquet.Net 6.1 with an allocation-lean string path ([#276](https://github.com/Wadman-IT/Primodel/issues/276)) ([c28222a](https://github.com/Wadman-IT/Primodel/commit/c28222a2143689940a86495d518c06a2b79b50b9))
+* offer Upsert in sql-target only for engines that can upsert ([#277](https://github.com/Wadman-IT/Primodel/issues/277)) ([cc7c62c](https://github.com/Wadman-IT/Primodel/commit/cc7c62c704049d7b6822d4f8745f4dace4e2fb58))
+* recover a stale governed exec identity credential automatically ([#279](https://github.com/Wadman-IT/Primodel/issues/279)) ([2dfb158](https://github.com/Wadman-IT/Primodel/commit/2dfb1589f99611e00c1534b084f72773bb78f723))
+* resolve materialize target columns case-insensitively and deflake the role sweep guard ([#286](https://github.com/Wadman-IT/Primodel/issues/286)) ([a0590a5](https://github.com/Wadman-IT/Primodel/commit/a0590a5aba9d9ff5ac9777ac7a82d399e7c4f203))
+* upsert and case-insensitive column matching for sql-target on every engine ([#269](https://github.com/Wadman-IT/Primodel/issues/269)) ([93288e4](https://github.com/Wadman-IT/Primodel/commit/93288e422bd095d8b2504355ddbd0882c59b724f))
+
+**SBOM:** [`primodel-5.1.0-linux-amd64.spdx.json`](./sbom/primodel-5.1.0-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.1.0-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.1.0.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.1.0
+```
+
 ## v5.0.2 — 2026-10-04
 
 ## [5.0.2](https://github.com/Wadman-IT/Primodel/compare/v5.0.1...v5.0.2) (2026-10-04)
