@@ -1,3 +1,19 @@
+## v5.2.0 — 2026-10-11
+
+## [5.2.0](https://github.com/Wadman-IT/Primodel/compare/v5.1.2...v5.2.0) (2026-10-11)
+
+
+### Features
+
+* accept plugin vendor licences through configuration ([#337](https://github.com/Wadman-IT/Primodel/issues/337)) ([d39012e](https://github.com/Wadman-IT/Primodel/commit/d39012ea56e6f2c4f24b2ee4d426a6cf9f31fedd))
+
+**SBOM:** [`primodel-5.2.0-linux-amd64.spdx.json`](./sbom/primodel-5.2.0-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-5.2.0-linux-arm64.spdx.json) · [combined](./sbom/primodel-5.2.0.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:5.2.0
+```
+
 ## v5.1.2 — 2026-10-10
 
 ## [5.1.2](https://github.com/Wadman-IT/Primodel/compare/v5.1.1...v5.1.2) (2026-10-10)
