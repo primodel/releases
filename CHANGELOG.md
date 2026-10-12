@@ -1,3 +1,23 @@
+## v6.0.0 — 2026-10-12
+
+## [6.0.0](https://github.com/Wadman-IT/Primodel/compare/v5.2.0...v6.0.0) (2026-10-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* Postgres 18 is the minimum supported version for the metadata and canonical databases. Canonical text comparison becomes case-insensitive; existing tables converge at startup, and tables with keys that differ only by case are reported and left unconverted until resolved.
+
+### Features
+
+* SQL Server as a canonical store, with cross-provider migration ([#368](https://github.com/Wadman-IT/Primodel/issues/368)) ([4f1ab17](https://github.com/Wadman-IT/Primodel/commit/4f1ab17b4b61825c24176a2fa84a34b4f1e54232))
+
+**SBOM:** [`primodel-6.0.0-linux-amd64.spdx.json`](./sbom/primodel-6.0.0-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-6.0.0-linux-arm64.spdx.json) · [combined](./sbom/primodel-6.0.0.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.0.0
+```
+
 ## v5.2.0 — 2026-10-11
 
 ## [5.2.0](https://github.com/Wadman-IT/Primodel/compare/v5.1.2...v5.2.0) (2026-10-11)
