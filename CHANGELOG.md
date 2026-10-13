@@ -1,3 +1,19 @@
+## v6.0.1 — 2026-10-13
+
+## [6.0.1](https://github.com/Wadman-IT/Primodel/compare/v6.0.0...v6.0.1) (2026-10-13)
+
+
+### Bug Fixes
+
+* **web:** bundle one copy of @codemirror/state and @codemirror/view ([#387](https://github.com/Wadman-IT/Primodel/issues/387)) ([36a5943](https://github.com/Wadman-IT/Primodel/commit/36a59432198552aa26bf7b3625a40fce92406db7)), closes [#386](https://github.com/Wadman-IT/Primodel/issues/386)
+
+**SBOM:** [`primodel-6.0.1-linux-amd64.spdx.json`](./sbom/primodel-6.0.1-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-6.0.1-linux-arm64.spdx.json) · [combined](./sbom/primodel-6.0.1.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.0.1
+```
+
 ## v6.0.0 — 2026-10-12
 
 ## [6.0.0](https://github.com/Wadman-IT/Primodel/compare/v5.2.0...v6.0.0) (2026-10-12)
