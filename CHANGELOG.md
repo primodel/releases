@@ -1,3 +1,19 @@
+## v6.0.2 — 2026-10-15
+
+## [6.0.2](https://github.com/Wadman-IT/Primodel/compare/v6.0.1...v6.0.2) (2026-10-15)
+
+
+### Bug Fixes
+
+* **deps:** take System.Security.Cryptography.Pkcs 10.0.13 for CVE-2026-84008 and CVE-2026-70162 ([#400](https://github.com/Wadman-IT/Primodel/issues/400)) ([20fb911](https://github.com/Wadman-IT/Primodel/commit/20fb911b3acb8ce9579e6569ebf53f1164da2a7d)), closes [#401](https://github.com/Wadman-IT/Primodel/issues/401)
+
+**SBOM:** [`primodel-6.0.2-linux-amd64.spdx.json`](./sbom/primodel-6.0.2-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-6.0.2-linux-arm64.spdx.json) · [combined](./sbom/primodel-6.0.2.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.0.2
+```
+
 ## v6.0.1 — 2026-10-13
 
 ## [6.0.1](https://github.com/Wadman-IT/Primodel/compare/v6.0.0...v6.0.1) (2026-10-13)
