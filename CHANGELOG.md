@@ -1,3 +1,25 @@
+## v6.1.0 — 2026-10-16
+
+## [6.1.0](https://github.com/Wadman-IT/Primodel/compare/v6.0.2...v6.1.0) (2026-10-16)
+
+
+### Features
+
+* **rls:** row-level security on Postgres and SQL Server ([#410](https://github.com/Wadman-IT/Primodel/issues/410)) ([b01c814](https://github.com/Wadman-IT/Primodel/commit/b01c8148bfabe9502b66bf0657f2eabe9a2592a1))
+
+
+### Bug Fixes
+
+* **ci:** run the web skip step from the workspace root on release PRs ([#414](https://github.com/Wadman-IT/Primodel/issues/414)) ([172b682](https://github.com/Wadman-IT/Primodel/commit/172b6824123d5f9fced856b419f039ba6952416c))
+* **demo:** grant personas on the CRM domain and make regex work on case-insensitive columns ([#412](https://github.com/Wadman-IT/Primodel/issues/412)) ([d4266be](https://github.com/Wadman-IT/Primodel/commit/d4266bed901269ed75b09cd714d68f09fba064ed))
+
+**SBOM:** [`primodel-6.1.0-linux-amd64.spdx.json`](./sbom/primodel-6.1.0-linux-amd64.spdx.json) · [`linux-arm64`](./sbom/primodel-6.1.0-linux-arm64.spdx.json) · [combined](./sbom/primodel-6.1.0.spdx.json)
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.1.0
+```
+
 ## v6.0.2 — 2026-10-15
 
 ## [6.0.2](https://github.com/Wadman-IT/Primodel/compare/v6.0.1...v6.0.2) (2026-10-15)
