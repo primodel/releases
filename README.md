@@ -6,7 +6,9 @@ alongside the image in the registry.
 
 - **Image:** `ghcr.io/primodel/primodel`
 - **Changelog:** [CHANGELOG.md](./CHANGELOG.md)
-- **SBOMs:** [`sbom/`](./sbom) (also attached to each image — see below)
+- **Per-version notes + SBOMs:** each version has a [GitHub Release](https://github.com/primodel/releases/releases)
+  (`v<version>`) with its SBOM files (amd64, arm64, combined) attached as assets — also attached directly
+  to the image itself, see below.
 - **Docs:** <https://primodel.io/docs/deployment/releases/>
 
 ## Every release is signed and inventoried
@@ -61,8 +63,9 @@ docker buildx imagetools inspect ghcr.io/primodel/primodel:<version> --format '{
 docker buildx imagetools inspect ghcr.io/primodel/primodel:<version>
 ```
 
-A copy of each release's SBOM is also committed under [`sbom/`](./sbom) for teams that want a file rather
-than a registry pull.
+A copy of each release's SBOM is also attached as a downloadable asset on that version's
+[GitHub Release](https://github.com/primodel/releases/releases) for teams that want a file rather than a
+registry pull.
 
 ## Reporting
 
