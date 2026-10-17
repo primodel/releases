@@ -69,4 +69,4 @@ registry pull.
 
 ## Reporting
 
-Security issues: **security@wadmanit.se**. Please do not open public issues for vulnerabilities.
+Security issues: **security@primodel.io**. Please do not open public issues for vulnerabilities.
