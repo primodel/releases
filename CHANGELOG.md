@@ -1,3 +1,36 @@
+## v6.2.0 — 2026-10-25
+
+**New**
+- Data lake export is now governed: a central clearance level and audience control exactly what leaves to the lake. Fields above the clearance are omitted from the lake schema entirely — never masked, never sent as null.
+- Per-entity controls for lake export: a domain Owner can enable "silver" (processed) and "bronze" (raw) export separately. Enabling raw export requires the operator's own clearance to cover the entity's most sensitive field, and shows a warning that raw sensitive data will leave in clear text.
+- Row-level security is now applied to lake exports: only rows the lake audience is permitted to see are written, and a row that falls outside the audience is removed from the lake.
+- Disabling raw ("bronze") export purges what was already captured. Changing the clearance, audience, or a per-entity toggle automatically evolves the lake schema and data to match.
+
+**Improved**
+- The whole interface now uses one consistent design system, with aligned forms, one Save per section and consistent spacing in light and dark mode.
+- Controls you are not allowed to use are shown read-only with the reason, instead of being hidden or failing when you save.
+- The source variants view handles many sources and fields, with sticky headers, a field filter and a "differences only" toggle; "View sources" on a golden record opens it directly.
+- Entities are now addressed in URLs by their stable technical name (for example `/demo/hr/person`), so renaming an entity, domain or data store no longer breaks integrations. Existing display-name URLs keep working but are deprecated.
+- Settings are reorganised into sections with one Save per section, and unsaved changes are flagged before you leave a section. Secrets such as API keys and webhooks are handled the same way everywhere, and unset settings show their default value.
+- Starting a domain migration first shows the pre-flight result, and the button is disabled while a migration for that domain is running.
+
+**Security**
+- The container image's operating-system packages are updated, including the fix for CVE-2026-85091 in zlib.
+
+**Fixed**
+- Fixed schema changes being applied as database commands (DDL) against a table that lives on a different data store than the one being changed — this could break schema updates for entities that reference across two canonical stores (e.g., a Postgres store and a SQL Server store).
+- A failed domain migration now removes what it copied to the target store and can be retried, and the reason a migration stops before switching is shown.
+- Saving notification email recipients no longer removes a stored Slack webhook.
+- Resizing a column in a data grid no longer re-sorts it.
+- The login screen no longer renders as a narrow column.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v6.2.0) — `primodel-6.2.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.2.0
+```
+
 # Changelog
 
 Customer-facing release notes for the Primodel container image (`ghcr.io/primodel/primodel`). Each version's SBOMs and verification instructions are on its [release](https://github.com/primodel/releases/releases).
