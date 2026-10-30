@@ -1,3 +1,36 @@
+## v6.3.0 — 2026-10-30
+
+**New**
+- Golden records emit change events like every other entity, so GraphQL subscriptions on a golden entity see merges and removals, labelled by the same change-event rules.
+- Change events can carry a business label (for example Joiner, Mover or Leaver) defined by per-entity rules, with a live test that shows the exact event that would be emitted.
+- Local accounts carry standard claims and directory attributes (department, cost center, country and more) that row policies can use.
+
+**Security**
+- Signing out and in as another user in the same browser tab no longer briefly shows the previous user's data.
+- A schema steward can no longer change an entity that belongs to a domain they do not steward.
+
+**Improved**
+- Row policies can only use claims that are forwarded to row security, and the allowlist suggests the claims your users actually carry.
+- Row-policy history shows what changed in each version and can restore an earlier one, and an approval shows exactly what is being approved.
+- System administrators can view every entity's structure, operational status and rule definitions, read-only, without access to its data.
+- When single sign-on is configured, the login screen offers it first.
+- Errors from authored SQL in table functions and data products show a clear message instead of a generic failure.
+
+**Fixed**
+- Saving a diagram that includes entities from several data stores now saves changes on every store, and a relationship between entities on different stores can be created in a single save.
+- Saving a schema where a relationship is resent unchanged no longer fails.
+- Golden records with more than about 50 fields are now merged by survivorship.
+- A golden record is removed once none of its sources has the record any more, and a deleted source record no longer contributes to the golden record.
+- After an upgrade, browsers load the new interface instead of a cached old one.
+- Removing a relationship between two entities in a single schema save no longer fails.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v6.3.0) — `primodel-6.3.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.3.0
+```
+
 ## v6.2.0 — 2026-10-25
 
 **New**
