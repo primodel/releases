@@ -1,3 +1,20 @@
+## v7.0.0 — 2026-10-31
+
+## Breaking
+
+- Plugins built for SDK 2.x no longer load; install the current plugin releases, which are built for this version.
+
+## Improved
+
+- Extension workers can no longer write records directly; data enters only through governed pipelines.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.0.0) — `primodel-7.0.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.0.0
+```
+
 ## v6.4.0 — 2026-10-31
 
 ## Breaking
