@@ -1,3 +1,21 @@
+## v6.4.0 — 2026-10-31
+
+## Breaking
+
+- When a paid licence expires, existing pipelines and data keep running, but creating new pipelines or entities pauses during a twelve-month Transition Period (Enterprise keeps creating within its limits); versions released after that period won't start under the expired licence.
+
+## New
+
+- The free Community edition is limited to ten entities, alongside three pipelines.
+- Demo installations show a banner stating they are not for commercial or production use.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v6.4.0) — `primodel-6.4.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:6.4.0
+```
+
 ## v6.3.0 — 2026-10-30
 
 **New**
