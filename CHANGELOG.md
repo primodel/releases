@@ -1,3 +1,16 @@
+## v7.0.1 — 2026-11-03
+
+## Security
+
+- Updated the bundled .NET runtime libraries and database drivers to their latest patch releases.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.0.1) — `primodel-7.0.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.0.1
+```
+
 ## v7.0.0 — 2026-10-31
 
 ## Breaking
