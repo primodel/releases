@@ -1,3 +1,17 @@
+## v7.1.1 — 2026-11-04
+
+**Fixed**
+- A connection test against a server that never completes a TLS handshake now fails within a bounded, configurable time (15 seconds by default — set `PRIMODEL_CONNECTION_TIMEOUT_SECONDS` to change it) with a clear message, instead of hanging. The same bound applies when a pipeline opens the connection.
+- The enterprise demo seed (`PRIMODEL_DEMO_ENTERPRISE=true`) now creates its Db2 and Oracle connections with TLS disabled (the audited plaintext opt-out), matching the demo containers, which listen in plaintext.
+- **Existing installs**: if you registered a Db2 or Oracle connection before TLS became the default for these engines and it now fails to connect, either enable TLS on the server, or open the connection's settings and turn on the plaintext opt-out — the same toggle SQL Server's self-signed demo certificate already uses. No migration step is required; this only affects connections that have not been reconfigured since the default changed.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.1.1) — `primodel-7.1.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.1.1
+```
+
 ## v7.1.0 — 2026-11-03
 
 ## New
