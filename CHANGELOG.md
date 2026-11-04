@@ -1,3 +1,16 @@
+## v7.1.2 — 2026-11-04
+
+## Fixed
+
+- Every Primodel pod now loads the plugins bundled in its image, including pods started after the plugins were installed, so Kubernetes deployments with per-pod storage no longer come up without drivers.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.1.2) — `primodel-7.1.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.1.2
+```
+
 ## v7.1.1 — 2026-11-04
 
 **Fixed**
