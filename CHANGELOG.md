@@ -1,3 +1,16 @@
+## v7.1.3 — 2026-11-04
+
+## Fixed
+
+- When MCP client registration is disabled, Primodel no longer advertises it and explains the refusal, and the MCP token endpoint answers malformed requests with 400 instead of 500.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.1.3) — `primodel-7.1.3-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.1.3
+```
+
 ## v7.1.2 — 2026-11-04
 
 ## Fixed
