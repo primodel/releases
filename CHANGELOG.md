@@ -1,3 +1,16 @@
+## v7.1.4 — 2026-11-07
+
+## Fixed
+
+- Several Primodel instances starting at the same time against a new database no longer crash while preparing the database or race to create the first administrator.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.1.4) — `primodel-7.1.4-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.1.4
+```
+
 ## v7.1.3 — 2026-11-04
 
 ## Fixed
