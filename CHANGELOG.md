@@ -1,3 +1,14 @@
+## v7.2.1 — 2026-11-08
+
+Maintenance release.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.2.1) — `primodel-7.2.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.2.1
+```
+
 ## v7.1.4 — 2026-11-07
 
 ## Fixed
