@@ -1,3 +1,16 @@
+## v7.3.0 — 2026-11-08
+
+## New
+
+- System administrators can monitor the work queue in Primodel (queue depth per shard and worker, backpressure per table), and autoscalers such as KEDA can scale workers on the number of shards under backpressure via `/health/work-queue`, which can be restricted to a separate management port or an address allowlist.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.3.0) — `primodel-7.3.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.3.0
+```
+
 ## v7.2.1 — 2026-11-08
 
 Maintenance release.
