@@ -1,3 +1,28 @@
+## v7.4.1 — 2026-11-09
+
+## New
+
+- Model files can name an entity's hierarchy parent field.
+- Ingestion runs left without a queued message are marked failed automatically, and a run can be terminated by hand from the run view.
+
+## Improved
+
+- Model files with an unknown key are rejected with the key's location, and model validation errors explain what is wrong.
+
+## Fixed
+
+- Ingestion into deployments that use S3 object storage no longer fails before writing any rows.
+- An ingestion error that retrying cannot fix now fails the run immediately instead of being retried.
+- Renaming an entity's physical name now renames its table in place, keeping its data.
+- The field-mapping step in the pipeline editor shows field names instead of identifiers.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.4.1) — `primodel-7.4.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.4.1
+```
+
 ## v7.4.0 — 2026-11-09
 
 ## New
