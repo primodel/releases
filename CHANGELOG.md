@@ -1,3 +1,16 @@
+## v7.3.2 — 2026-11-09
+
+## Improved
+
+- The MCP sign-in consent page shows where access will be sent, so you can tell a local app from a website before you allow it.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.3.2) — `primodel-7.3.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.3.2
+```
+
 ## v7.3.1 — 2026-11-08
 
 Maintenance release.
