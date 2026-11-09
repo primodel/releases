@@ -1,3 +1,33 @@
+## v7.4.3 — 2026-11-09
+
+## New
+
+- Field mappings can target date fields as Date, keeping the calendar date exactly as written.
+
+## Improved
+
+- Pipeline settings errors name the setting and list the accepted values, and pipeline validation catches every error that saving would.
+- Slow database connections report a timeout instead of suggesting a TLS problem, and Db2 gets more time to start.
+- The runs summary counts runs that are stuck without being tracked.
+- Empty data views show a placeholder that says whether filters are the reason.
+
+## Fixed
+
+- A value a field mapping cannot convert is now quarantined with a reason instead of disappearing, and a run that loses records fails instead of reporting success.
+- A snapshot run that lost records no longer deletes existing rows.
+- Text values that look like dates are stored exactly as received.
+- SQL sources reading date columns no longer produce an unreadable placeholder value.
+- Connections configured to allow unencrypted traffic are now honoured when testing and running pipelines.
+- Profiling an entity with yes/no fields works.
+- Filtering records on an empty value finds empty values.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.4.3) — `primodel-7.4.3-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.4.3
+```
+
 ## v7.4.2 — 2026-11-09
 
 ## New
