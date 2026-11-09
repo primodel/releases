@@ -1,3 +1,27 @@
+## v7.4.2 — 2026-11-09
+
+## New
+
+- Field mappings can set a target field to a constant value.
+
+## Improved
+
+- The runs summary counts runs that are stuck without a queued message separately.
+
+## Fixed
+
+- An HTTP step that uses a stored credential now authenticates with it when tested, and the form no longer asks for the inline fields alongside it.
+- A field-mapping step with a misspelled or missing operator argument is now rejected with a message naming it, instead of silently writing an empty value.
+- Agents creating entities can set each field's classification and sensitivity tags, and see them when describing fields.
+- Buttons on the emergency access page no longer stretch across the page.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.4.2) — `primodel-7.4.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.4.2
+```
+
 ## v7.4.1 — 2026-11-09
 
 ## New
