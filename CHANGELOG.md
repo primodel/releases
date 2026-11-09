@@ -1,3 +1,28 @@
+## v7.4.0 — 2026-11-09
+
+## New
+
+- HTTP pipelines send a default `User-Agent: Primodel` header, so firewalls that reject requests without one let them through; set the header yourself to override it, or leave it blank to send none.
+
+## Improved
+
+- Credential use grants are chosen by domain name.
+- Expired MCP sign-in codes and tokens, and MCP clients unused for 90 days, are cleaned up automatically.
+
+## Fixed
+
+- A credential granted to a domain now appears in the pipeline editor's credential picker for that domain's pipelines.
+- JSON Lines files no longer fail to ingest when the storage connection delivers a record in pieces.
+- An ingestion run whose data cannot be read now fails with the error instead of appearing stuck; temporary faults are retried a limited number of times (`PRIMODEL_INGEST_MAX_DELIVERY_ATTEMPTS`, default 5).
+- Layout of the entity dashboard's field list and of system field names on the model canvas.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.4.0) — `primodel-7.4.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.4.0
+```
+
 ## v7.3.2 — 2026-11-09
 
 ## Improved
