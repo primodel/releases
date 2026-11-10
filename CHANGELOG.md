@@ -1,3 +1,49 @@
+## v7.5.0 — 2026-11-10
+
+## Breaking
+
+- Effective-dated entities created before this release must be converted once (the "converge effective-from" action) before they can ingest again; the conversion also updates the pipelines that feed them.
+- A unique constraint is now refused on versioned and effective-dated entities, where every version repeats the value.
+
+## New
+
+- Effective-dated entities keep their period in platform-managed "effective from" and "effective until" columns, and an empty start or end means open-ended.
+- Effective-dated settings can be expressed in model-as-code and through the MCP tools.
+- Changing a pipeline's source tag offers to relabel the rows it already wrote.
+- A value-based Referential data-quality rule checks that a field's value exists in another entity, and re-checks when the other entity changes.
+- Cross-field data-quality rules can compare dates and text.
+- Data-quality rules are evaluated against existing rows when they are created, activated or changed.
+- An MCP tool sets classification and sensitivity on existing entities and fields.
+- Owners can empty an entity of all its rows.
+
+## Improved
+
+- The data-quality rule list hides superseded and retired rules by default, with a toggle to show them.
+- Model-as-code reports attribute changes it cannot apply to an existing entity instead of ignoring them, and picks up display-name renames.
+- Lake tables are now named per domain; run a one-time re-export, after which the old tables can be deleted.
+
+## Fixed
+
+- A stored-credential reference that cannot be resolved now fails the request instead of sending it unauthenticated.
+- Stored secrets read back consistently across pipelines.
+- The OAuth2 grant type is chosen from a list instead of typed by hand.
+- Turning multi-source on or off no longer clears field classification, sensitivity tags or unique flags.
+- Profiling works on entities with uuid columns.
+- The hierarchy view no longer marks a self-reference as broken when the parent exists.
+- A diagram shows a newly added existing entity without a reload.
+- Filter bar layout on hierarchical tables, and a double scrollbar.
+- SQL sources over the canonical store accept regular expressions.
+- An offset timestamp mapped into a date field no longer lands a day early.
+- Lake commits that are retried no longer leave orphaned files, and the ClickHouse query-back is reliable.
+- Schema changes made on one node are picked up by every node.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.5.0) — `primodel-7.5.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.5.0
+```
+
 ## v7.4.3 — 2026-11-09
 
 ## New
