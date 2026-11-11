@@ -1,3 +1,47 @@
+## v7.6.0 — 2026-11-11
+
+## Breaking
+
+- Range rules on date fields take ISO dates (for example 1920-01-01). A bare year is rejected.
+
+## New
+
+- Effective-dated and versioned entities get generated query functions in the canonical database (as-of, current, periods or versions, and active-or-latest), usable from SQL sources, data products and table functions.
+- References to effective-dated and versioned entities resolve to the version in force now, or else the last one that was in force, never a future one.
+- Every data domain has a time zone, editable on the domain page and in model-as-code. It defines "today" for effective-dated data. Existing domains default to UTC.
+- Field impact analysis shows which pipelines, data products, webhooks, quality rules and references a field change affects, in the field dialogs, the deploy review and the MCP tools.
+- The pipelines list has search, filters, grouping and sorting, with views you can share by URL.
+- A field's classification is kept at least as high as its sensitivity tags require. A Classification alignment page lists and fixes any discrepancies.
+- A normalize-roman-alphabet pipeline operator and a matching database function fold accented and special Latin letters to plain ASCII, with identical results in both.
+- An MCP tool lists the classification levels, sensitivity tags and compliance frameworks that fields accept.
+- An MCP tool recomputes a golden entity on demand, and another releases the findings of a withdrawn quality rule.
+
+## Improved
+
+- Creating a survivorship configuration provisions its recompute pipeline and fills the golden entity right away, even when the source is already loaded.
+- MCP tools accept a field's name as well as its ID.
+- The data quality dashboard shows the current state, with blocked and flagged rows reported separately. Flagged rows are marked in the entity's data view.
+- Emptying a large entity is much faster.
+- The dark theme's tertiary text is easier to read.
+
+## Fixed
+
+- Records whose key includes a date, number or other non-text column open correctly.
+- Opening an entity page no longer records a denied lake configuration request for domain owners.
+- Survivorship works when the source and golden entities live in different domains.
+- Range and pattern quality rules on date fields evaluate correctly. A rule that can't be evaluated against its field's type is refused instead of silently passing.
+- Quality-rule findings are released when the rule is withdrawn or a newer version finds the rows clean.
+- Golden-record recomputes no longer leave two current versions of a record.
+- Unknown compliance framework names are rejected with the list of valid ones.
+- The bronze export warning is shown as a plain notice while bronze export is off.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.6.0) — `primodel-7.6.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.6.0
+```
+
 ## v7.5.0 — 2026-11-10
 
 ## Breaking
