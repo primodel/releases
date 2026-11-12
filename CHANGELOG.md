@@ -1,3 +1,38 @@
+## v7.8.0 — 2026-11-12
+
+## New
+
+- A Query Workbench for running governed, read-only SQL against a data store, with saved queries and history, also available to AI agents over MCP.
+
+## Improved
+
+- Survivorship configurations and their recompute pipelines can be read, versioned, provisioned and removed over MCP.
+- Field layout (groups and order) can be set over MCP and in model-as-code.
+- Model diffs report field-level authority and compliance changes.
+- Long ingest runs report their phases and progress.
+- SQL Server ingestion is substantially faster for plain, multi-source and history tables.
+- Field impact analysis is exact for Data Products, table functions and outgoing pipelines.
+- The Entities list shows and filters by temporal mode, and lineage edges highlight on hover.
+
+## Fixed
+
+- Loading effective-dated data with several periods per key is fast again: 30,000 rows take about half a minute instead of over 12, and an unchanged re-run takes seconds.
+- Switching an entity, including a golden entity, to effective-dated no longer fails, and no longer asks for an effective-from field.
+- Model-as-code applies `temporal: effectiveDated` as effective-dated rather than as history.
+- Relationship lines reappear in entity diagrams after a referenced entity's key changed.
+- A semicolon inside a string or comment no longer makes a SQL statement count as several.
+
+## Security
+
+- On SQL Server, a Data Product or table function column could carry another column's classification when the SELECT list wasn't in table order, so a sensitive value could be returned unmasked.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.8.0) — `primodel-7.8.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.8.0
+```
+
 ## v7.7.1 — 2026-11-12
 
 ## Improved
