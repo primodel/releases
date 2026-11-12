@@ -1,3 +1,24 @@
+## v7.8.1 — 2026-11-12
+
+## Improved
+
+- Ingestion publishes its change events much faster, so large uploads finish noticeably sooner.
+- Effective-dated ingestion into tables that already hold history is faster.
+- The Query Workbench fills the window; results scroll inside the table with a sticky header.
+
+## Fixed
+
+- The Query Workbench store and domain pickers no longer overlap.
+- Viewing source variants for a golden record with a composite key no longer fails.
+- A survivorship configuration with an over-long description is rejected with a clear message instead of a server error.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.8.1) — `primodel-7.8.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.8.1
+```
+
 ## v7.8.0 — 2026-11-12
 
 ## New
