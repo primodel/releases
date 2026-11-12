@@ -1,3 +1,43 @@
+## v7.7.0 — 2026-11-12
+
+## New
+
+- Pipeline lineage. A Flow view shows which systems and pipelines feed each entity, what each change triggers, and where data leaves, with step-by-step expansion. It is also available to agents through an MCP tool.
+- An effective-dated entity's end date can be mapped from the source. A supplied end wins over the derived one, inclusive source dates convert automatically, and an overlapping period is quarantined rather than silently adjusted.
+- The MCP record query can read past and future slices of effective-dated and versioned entities, and every row carries its period.
+- An MCP tool versions a survivorship configuration.
+
+## Improved
+
+- Ingestion is many times faster in every table mode on both PostgreSQL and SQL Server. A 30,000-row update now takes seconds instead of a minute or more.
+- Overlapping periods on effective-dated entities in PostgreSQL are now prevented by an index-backed constraint. Existing tables are migrated automatically.
+- Every MCP tool returns a clear error with a correlation ID instead of raw internal detail.
+- Relationships can be removed through model-as-code, and deleting an entity can remove its relationships.
+- The enrich transform declares its lookup entity, can keep unmatched codes as they are, and reports the lookup as a dependency.
+- Record pages show field details in a tooltip instead of under every value.
+
+## Fixed
+
+- Retyping a field no longer silently breaks survivorship. References move to the new field, and a recompute never writes empty columns for a missing field.
+- Survivorship writes and displays reference fields correctly.
+- Pickers never show a missing field or entity as if it were the first option, and saving is blocked until it is fixed.
+- Two entities with the same name in different domains no longer break schema changes for the whole store.
+- Deleting an effective-dated or versioned entity, and changing its fields, now succeeds.
+- Count and aggregate tools apply the same filters as the record query.
+- Findings left by quality rules that were withdrawn before upgrading are released automatically.
+- A date without a time zone is no longer shifted by the server's time zone when used as an effective date.
+
+## Security
+
+- Updated a CBOR library for a denial-of-service advisory.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.7.0) — `primodel-7.7.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.7.0
+```
+
 ## v7.6.0 — 2026-11-11
 
 ## Breaking
