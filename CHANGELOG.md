@@ -1,3 +1,24 @@
+## v7.7.1 — 2026-11-12
+
+## Improved
+
+- SQL sources and targets pick their data store or connection from a list, and a missing one is reported when you validate or save the pipeline.
+- A newly queued run starts promptly on a node that has just taken over its work after a cluster rebalance.
+
+## Fixed
+
+- Run history now shows the time spent fetching from the source separately from the time spent queued, so a slow source no longer looks like a busy platform.
+- A date or time without a time zone is read as UTC everywhere, so values no longer shift on servers that don't run in UTC.
+- Times with a half- or quarter-hour offset (for example +05:30 or −03:30) keep their exact instant.
+- Renaming a pipeline's source tag completes correctly even if the server stops partway through.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.7.1) — `primodel-7.7.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.7.1
+```
+
 ## v7.7.0 — 2026-11-12
 
 ## New
