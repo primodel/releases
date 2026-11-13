@@ -1,3 +1,17 @@
+## v7.10.1 — 2026-11-13
+
+## Fixed
+
+- A golden record recompute no longer stalls and times out at its start when another session is reading the survivorship override table, and its configured timeout now applies to every step.
+- Re-checking a data quality rule no longer marks still-failing rows as corrected on multi-source entities, so violation counts and the quarantine queue match the data.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.10.1) — `primodel-7.10.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.10.1
+```
+
 ## v7.10.0 — 2026-11-13
 
 ## Improved
