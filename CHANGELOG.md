@@ -1,3 +1,26 @@
+## v7.10.0 — 2026-11-13
+
+## Improved
+
+- Effective-dated loads classify periods in the database, so their cost stays flat as tables grow into the millions of rows.
+- Rolling upgrades drain traffic before an instance stops, so in-flight requests complete.
+- Change events are no longer duplicated when a publish is retried.
+
+## Fixed
+
+- Golden records whose rules use reference fields recompute correctly.
+- Recomputing an effective-dated golden record set of tens of thousands of periods completes in seconds instead of timing out, and overlapping recompute requests coalesce.
+- A failed change of temporal mode no longer leaves stray columns or functions behind, and leftovers from earlier versions are cleaned up at startup.
+- Emptying an entity or re-running a data quality rule no longer leaves stale quarantine findings, so violation counts match the data.
+- Several new periods for one record in a single load all reach the lake, not just the last.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.10.0) — `primodel-7.10.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.10.0
+```
+
 ## v7.9.0 — 2026-11-13
 
 ## New
