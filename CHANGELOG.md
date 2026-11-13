@@ -1,3 +1,24 @@
+## v7.12.0 — 2026-11-13
+
+## Improved
+
+- Data Store Integrators can see blocking sessions on their data store, and domain Owners can see them with other domains' table names hidden.
+
+## Fixed
+
+- An incremental golden recompute reaches every key that needs it, including keys missing from the golden after earlier interrupted runs, and its retire step no longer scans the whole source.
+
+## Security
+
+- The runtime base image takes the glibc fix for CVE-2026-84243.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.12.0) — `primodel-7.12.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.12.0
+```
+
 ## v7.11.0 — 2026-11-13
 
 ## New
