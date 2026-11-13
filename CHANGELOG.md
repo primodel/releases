@@ -1,3 +1,30 @@
+## v7.9.0 — 2026-11-13
+
+## New
+
+- A "null if empty" value operator for field mappings.
+- Versioned and effective-dated entities show one row per record with a Versions link to every version or period, including audited unmasking.
+
+## Improved
+
+- Runs that quarantine many rows finish much faster, and quarantine shows as its own phase with a live count.
+- Entity descriptions over MCP include the physical primary key and unique constraints.
+
+## Fixed
+
+- Converting a golden entity to effective-dated keeps one row per period instead of rejecting a second period, and entities converted on an earlier version are repaired at startup.
+- The overlap check when converting to effective-dated names the conflicting keys.
+- Golden records built from effective-dated sources support periods with no start date (valid since forever).
+- An enrichment that matches a lookup row with an empty value now writes an empty (null) value instead of an empty string.
+- Effective-dated loads no longer lose field values on new periods that arrive in the same batch as a termination.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.9.0) — `primodel-7.9.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.9.0
+```
+
 ## v7.8.1 — 2026-11-12
 
 ## Improved
