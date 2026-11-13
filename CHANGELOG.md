@@ -1,3 +1,16 @@
+## v7.12.1 — 2026-11-13
+
+## Improved
+
+- Recomputing an effective-dated golden record set is much faster and drains a large backlog in a single run, committing as it goes so an interruption resumes rather than starting over.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.12.1) — `primodel-7.12.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.12.1
+```
+
 ## v7.12.0 — 2026-11-13
 
 ## Improved
