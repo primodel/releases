@@ -1,3 +1,25 @@
+## v7.11.0 — 2026-11-13
+
+## New
+
+- System administrators can see blocking sessions and lock waits on a data store.
+
+## Improved
+
+- Running recomputes show their current step and progress, and run diagnostics flag a run that has stopped making progress.
+- Entity descriptions over MCP list collection (inverse reference) fields.
+
+## Fixed
+
+- A golden record recompute can no longer hang indefinitely: it fails with a message naming the step it was in, and large recomputes drain to completion across successive runs.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.11.0) — `primodel-7.11.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.11.0
+```
+
 ## v7.10.1 — 2026-11-13
 
 ## Fixed
