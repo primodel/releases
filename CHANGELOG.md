@@ -1,3 +1,17 @@
+## v7.12.2 — 2026-11-14
+
+## Fixed
+
+- Filtering records of an effective-dated entity by key returns only that record's periods, and the Versions dialog lists them for multi-source entities too.
+- Putting a record source in a pipeline's source slot (or the reverse) explains which slot it belongs in, instead of asking for a format adapter.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.12.2) — `primodel-7.12.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.12.2
+```
+
 ## v7.12.1 — 2026-11-13
 
 ## Improved
