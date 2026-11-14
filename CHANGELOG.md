@@ -1,3 +1,29 @@
+## v7.13.0 — 2026-11-14
+
+## New
+
+- Pipeline and lineage diagrams can be switched between left-to-right and top-down layout.
+
+## Improved
+
+- Relabelling a data source on a large table now runs in the background and can no longer be interrupted by a client timeout.
+- SQL Server ingest for effective-dated tables is significantly faster on long correction chains.
+
+## Fixed
+
+- Golden records now refresh their lineage and provenance after a source relabel.
+- Incremental and full golden recompute now converge to the same result for effective-dated tables.
+- Plain entities now get a physical primary key on their business key, matching their declared schema.
+- Non-temporal tables with survivorship merging no longer fail when they lack a supersede timestamp column.
+- The relabel guard that refuses a conflicting pipeline now returns a clear error instead of a generic failure.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.0) — `primodel-7.13.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.0
+```
+
 ## v7.12.2 — 2026-11-14
 
 ## Fixed
