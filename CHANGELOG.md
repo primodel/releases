@@ -1,3 +1,26 @@
+## v7.13.1 — 2026-11-14
+
+## Improved
+
+- The standard OTEL_EXPORTER_OTLP_* and OTEL_SERVICE_NAME / OTEL_RESOURCE_ATTRIBUTES variables are now honoured, and telemetry identifies the process role and version.
+- Background database polling and health-probe requests no longer flood traces on an idle installation; settings turn each back on.
+
+## Fixed
+
+- Composite primary keys now follow the key's declared column order, and existing keys built in the wrong order are rebuilt online on upgrade without touching data.
+- Setting an OTLP endpoint now turns on telemetry export, and startup logs whether traces, metrics and logs are being exported and where.
+- Environment variables in the Section__Key form now override settings from configuration files, as documented.
+- The cursor no longer jumps while typing in the Query Workbench.
+- Query Workbench history and saved queries are left-aligned and show the start of each query.
+- SQL and other validation errors now show the actual message instead of "Validation failed."
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.1) — `primodel-7.13.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.1
+```
+
 ## v7.13.0 — 2026-11-14
 
 ## New
