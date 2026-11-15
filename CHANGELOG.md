@@ -1,3 +1,28 @@
+## v7.13.5 — 2026-11-15
+
+## New
+
+- GraphQL now rejects unknown query arguments, filter fields, filter operators and type-mismatched filter values with a clear error instead of silently returning unfiltered rows.
+- GraphQL exposes every system column an entity's mode carries (hash, sync cursor, created/updated timestamps, version, source, effective-dated bounds, retention expiry, lineage) as read-only fields.
+
+## Improved
+
+- entity mode indicators (effective-dated, history, multi-source, golden, hierarchical, retention, soft-delete) are now shown consistently, with a short explanation, everywhere an entity appears.
+
+## Fixed
+
+- a GraphQL query that joins into an effective-dated entity no longer fails when the joined column isn't text-typed.
+- the change-detection fingerprint now normalises timestamps and decimals by declared column type, so the first reload of each effective-dated table after upgrading reports every row as changed once; later unchanged reloads are true no-ops.
+- unmasking, updating, deleting, permanently erasing or viewing the version history of a record no longer fails on a multi-source or effective-dated row.
+- the Versions dialog now shows whether each period is in the past, in force now, or upcoming (instead of labelling every period "live"), and formats date-only bounds without a timestamp.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.5) — `primodel-7.13.5-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.5
+```
+
 ## v7.13.4 — 2026-11-15
 
 ## Improved
