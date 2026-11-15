@@ -1,3 +1,28 @@
+## v7.13.3 — 2026-11-15
+
+## New
+
+- The lineage diagram now highlights a node's connected edges on hover or selection, shows distinct shapes per node kind, and can display pipelines as edges instead of boxes.
+
+## Improved
+
+- After upgrading, the first reload of tables with date fields or generated columns may report updates on unchanged rows once, as stored row fingerprints are recomputed.
+- Ingestion traces now show a complete root-to-finish timeline, including time spent waiting in queue, for healthy runs as well as failed ones.
+
+## Fixed
+
+- Demo data seeding no longer fails on a fresh install when some rows are diverted to data-quality review.
+- Reloading data with no real changes no longer repeatedly re-checks every row; a one-time fingerprint repair now also runs automatically when needed.
+- Tables with computed (generated) columns no longer fail to load with a database error.
+- Opening a record that belongs to a multi-source table no longer shows a "not found" error; an ambiguous record now shows a clear choice instead of a silent failure.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.3) — `primodel-7.13.3-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.3
+```
+
 ## v7.13.2 — 2026-11-15
 
 ## Improved
