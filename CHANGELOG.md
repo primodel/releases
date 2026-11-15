@@ -1,3 +1,16 @@
+## v7.14.1 — 2026-11-15
+
+## Improved
+
+- Change detection during loads is faster and allocation-free, and JSON fields are compared in a canonical form, so reordered keys or whitespace no longer count as a change; the first reload after upgrading quietly refreshes stored fingerprints with no change events.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.1) — `primodel-7.14.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.1
+```
+
 ## v7.14.0 — 2026-11-15
 
 ## Improved
