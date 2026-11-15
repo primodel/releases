@@ -1,3 +1,23 @@
+## v7.13.2 — 2026-11-15
+
+## Improved
+
+- Database spans during ingestion are named by step and carry the parameterized SQL text, so traces show which statement took the time; a setting turns the SQL text off.
+- Startup and idle installations emit far fewer traces: plugin loading is a single trace, and the change-outbox relay only traces when it delivers something.
+- Loading effective-dated tables is much faster and its cost now scales with the number of changes instead of the size of the snapshot; reloading unchanged data writes nothing.
+- Very large effective-dated loads now apply in bounded batches with steady memory use, and resume cleanly after an interruption.
+
+## Fixed
+
+- Telemetry from workers that shut down (for example when autoscaling scales in) is now flushed before exit instead of being lost.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.2) — `primodel-7.13.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.2
+```
+
 ## v7.13.1 — 2026-11-14
 
 ## Improved
