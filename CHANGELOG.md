@@ -1,3 +1,20 @@
+## v7.13.4 — 2026-11-15
+
+## Improved
+
+- Reloading unchanged effective-dated data no longer reprocesses previously terminated periods, so unchanged reloads finish much faster.
+
+## Fixed
+
+- The data lineage flow no longer flickers when the mouse moves quickly across it, and a selected node keeps its highlight while hovering others.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.4) — `primodel-7.13.4-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.4
+```
+
 ## v7.13.3 — 2026-11-15
 
 ## New
