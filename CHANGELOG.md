@@ -1,3 +1,22 @@
+## v7.14.0 — 2026-11-15
+
+## Improved
+
+- REST and MCP now accept a JSON or JSONB field's value as either a nested JSON object/array or JSON text when creating or updating a record.
+- Ingestion now honours a per-record source, so each record in a batch can carry its own source instead of the whole batch sharing one.
+- A new data snapshot now replaces only the sources actually present in that snapshot, leaving other sources' existing records untouched.
+
+## Fixed
+
+- JSON and JSONB field values now come back as proper nested JSON — not as escaped text — in REST responses, GraphQL, MCP, data products, and delivery.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.0) — `primodel-7.14.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.0
+```
+
 ## v7.13.6 — 2026-11-15
 
 ## New
