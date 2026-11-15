@@ -1,3 +1,20 @@
+## v7.13.6 — 2026-11-15
+
+## New
+
+- A diagnostic explains why an incoming record was or wasn't treated as changed, column by column, without revealing values above your clearance.
+
+## Fixed
+
+- Reloading unchanged data into a multi-source effective-dated table now skips unchanged rows instead of re-comparing every row, so reloads where most rows are unchanged finish much faster; the first reload after upgrading quietly updates stored fingerprints, with no change events.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.13.6) — `primodel-7.13.6-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.13.6
+```
+
 ## v7.13.5 — 2026-11-15
 
 ## New
