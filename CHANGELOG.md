@@ -1,3 +1,16 @@
+## v7.14.3 — 2026-11-16
+
+## Security
+
+- The bundled FHIR, Google Cloud Storage, Azure Blob Storage, Amazon SQS, Amazon SNS and Amazon Kinesis connectors now re-check the destination address when connecting, closing a DNS-rebinding path to internal addresses.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.3) — `primodel-7.14.3-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.3
+```
+
 ## v7.14.2 — 2026-11-16
 
 ## Security
