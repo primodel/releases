@@ -1,3 +1,16 @@
+## v7.14.2 — 2026-11-16
+
+## Security
+
+- outbound connections from these connectors now re-check the destination address at connect time, closing a DNS-rebinding path to internal addresses.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.2) — `primodel-7.14.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.2
+```
+
 ## v7.14.1 — 2026-11-15
 
 ## Improved
