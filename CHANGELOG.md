@@ -1,3 +1,16 @@
+## v7.14.8 — 2026-11-16
+
+## Fixed
+
+- a golden (survivorship) entity with an effective-dated history now correctly carries its data lineage through every read, instead of occasionally showing every field masked or failing with an error.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.8) — `primodel-7.14.8-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.8
+```
+
 ## v7.14.7 — 2026-11-16
 
 ## Fixed
