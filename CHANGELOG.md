@@ -1,3 +1,18 @@
+## v7.14.7 — 2026-11-16
+
+## Fixed
+
+- Golden (survivorship) records with a sensitive field show the reveal/unmask control again, across every table shape (plain, effective-dated, multi-source, and version history).
+- A data-domain migration's content-verification step no longer reports a false mismatch for a row whose only change was in a JSON-typed field.
+- An exported lake/Iceberg snapshot writes the real content of a JSON-typed field instead of placeholder text.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.7) — `primodel-7.14.7-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.7
+```
+
 ## v7.14.6 — 2026-11-16
 
 ## New
