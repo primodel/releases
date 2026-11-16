@@ -1,3 +1,22 @@
+## v7.14.6 — 2026-11-16
+
+## New
+
+- Snake Case and Kebab Case field-mapping operators are available when authoring pipelines.
+
+## Fixed
+
+- Filtering, grouping, or looking up distinct values by a reference field's physical column name now works, not just its display name.
+- An invalid filter field name on a data query now returns a clear error message instead of a generic failure, with a suggestion when a close match exists.
+- Diagram edges no longer intermittently fail to render when a canvas first loads.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.6) — `primodel-7.14.6-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.6
+```
+
 ## v7.14.5 — 2026-11-16
 
 ## New
