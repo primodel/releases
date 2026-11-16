@@ -1,3 +1,27 @@
+## v7.14.5 — 2026-11-16
+
+## New
+
+- Added Snake Case and Kebab Case field-mapping operators for pipeline authoring.
+
+## Improved
+
+- The Source filter on the Data tab is now a multi-select panel, so you can filter by more than one source at once.
+- SQL editor autocomplete now also suggests an entity's generated functions, not just its tables and columns, and offers a "did you mean" hint for near-miss names.
+
+## Fixed
+
+- Moving a box in a diagram and saving no longer pops up an unnecessary deploy review, and temporal read functions no longer get incorrectly flagged as out of date right after being recreated.
+- A record's related-records tab now shows only that record's own related rows, instead of every row in the related table.
+- Creating a new entity with a default value on a required field now applies that default correctly, instead of failing the first import that omits the field.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.5) — `primodel-7.14.5-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.5
+```
+
 ## v7.14.4 — 2026-11-16
 
 ## Fixed
