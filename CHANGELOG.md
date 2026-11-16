@@ -1,3 +1,20 @@
+## v7.14.4 — 2026-11-16
+
+## Fixed
+
+- A field default value is now validated against its declared type before a model deploy applies it, with a clear error naming the field when it doesn't match, instead of a generic failure.
+
+## Security
+
+- Fixed a field default value containing a quote or semicolon from being interpolated unescaped into the generated database schema change during a model deploy.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v7.14.4) — `primodel-7.14.4-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:7.14.4
+```
+
 ## v7.14.3 — 2026-11-16
 
 ## Security
