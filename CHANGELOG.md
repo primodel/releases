@@ -1,3 +1,24 @@
+## v8.1.1 — 2026-11-17
+
+## Fixed
+
+- AI features (Copilot, Fix with AI) work behind gateways and firewalls that reject requests without a User-Agent; every outbound call now identifies itself as Primodel.
+- AI errors distinguish a rejected API key from a request refused by a gateway or firewall.
+- Changing a runtime setting such as the AI API key takes effect on every node without a restart.
+- Two concurrent writes that start the same new effective-dated period no longer conflict or deadlock.
+- Large CSV and fixed-width files no longer slow down from excessive memory growth while decoding.
+- The ingest diff explainer no longer reports every row of a plain or multi-source entity as having a stale hash.
+- Dropdown settings no longer appear to have a value selected when none is stored; unset settings show their default.
+- The connection editor is wide enough to show its access list without horizontal scrolling.
+- The demo data shipped with the getting-started stack matches the generator again.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.1.1) — `primodel-8.1.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.1.1
+```
+
 ## v8.1.0 — 2026-11-17
 
 ## New
