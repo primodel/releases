@@ -1,3 +1,20 @@
+## v8.0.0 — 2026-11-17
+
+## Breaking
+
+- SDK contracts improved and consolidated; plugins must be rebuilt against Primodel SDK 4.
+
+## Fixed
+
+- Data grid column-group headers now line up with their columns.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.0.0) — `primodel-8.0.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.0.0
+```
+
 ## v7.14.8 — 2026-11-16
 
 ## Fixed
