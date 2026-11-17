@@ -1,3 +1,34 @@
+## v8.1.0 — 2026-11-17
+
+## New
+
+- Query Workbench can reveal the masked values of a single result row; each reveal is audited.
+- Pipelines have an Unnest transform that emits one record per array element, carrying the parent's fields.
+- SFTP and S3 sources can delete, move or archive a file after it has been ingested.
+- Kafka steps can pick which registered Kafka connection to use, and change-data-capture sources (Postgres, SQL Server, MySQL, MongoDB) can read from a registered external connection.
+
+## Improved
+
+- Every step setting is a proper form field; steps without settings say so instead of showing a JSON box, and encodings and compression levels are dropdowns.
+- The Versions and Sources dialogs open revealed and can pivot to show only changed fields.
+- System columns on the Data tab fit their content and can be resized.
+- Aggregates, distinct values and counts accept system columns such as `__source`.
+- Pushing records into a plain entity is up to 13 times faster.
+- The demo seed only adds what is missing, so it is safe to run on an existing demo install.
+
+## Fixed
+
+- Query Workbench reports a timeout as a timeout, with a suggested rewrite, instead of an opaque error, and Fix with AI says when AI is not configured.
+- Equal decimal values with different trailing zeros no longer register as a change.
+- Unique fields get their unique index when a table is first created or a field is added.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.1.0) — `primodel-8.1.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.1.0
+```
+
 ## v8.0.0 — 2026-11-17
 
 ## Breaking
