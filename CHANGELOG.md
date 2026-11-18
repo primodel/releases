@@ -1,3 +1,28 @@
+## v8.4.0 — 2026-11-18
+
+## New
+
+- Paste or upload keys and certificates in the format you have (PEM, OpenSSH, JWK, PFX or DER) wherever a setting or credential takes key material; Primodel detects the type and shows its fingerprint and expiry.
+- Table mode changes can collapse temporal history and multi-source rows, with a preview of exactly what is lost and typed confirmation for lossy moves.
+
+## Fixed
+
+- Retiring a source tag no longer affects keys whose current version comes from another source.
+- Turning soft delete on or off now adds or removes the deleted-flag column, and SQL Server counts soft-deleted rows correctly.
+- Plugins can no longer store a JSON object or array as empty when reading it as text.
+
+## Security
+
+- A private key is write-only once entered: only its type, size and fingerprint are shown afterwards, and it never appears in pipeline summaries, YAML or API responses.
+- Encryption refuses RSA keys shorter than 2048 bits.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.0) — `primodel-8.4.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.0
+```
+
 ## v8.3.1 — 2026-11-18
 
 ## New
