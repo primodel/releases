@@ -1,3 +1,26 @@
+## v8.3.0 — 2026-11-18
+
+## New
+
+- Retire a source tag from a multi-source entity with a preview first; it refuses while a pipeline or survivorship rule still uses the tag, and every retirement is audited.
+- Change an entity's table mode (multi-source, soft delete, retention) from the entity page, with a preview of exactly what each change does before it's confirmed.
+- On-change schedules can watch specific entities.
+- Query Workbench's Promote to SQL source opens the pipeline editor with the query prefilled.
+
+## Improved
+
+- Secret settings show whether a value is set without ever revealing it, in the UI, REST, MCP and YAML.
+- Narrowing a text field's maximum length on an empty table is no longer flagged as destructive.
+- Multi-source reference and uniqueness rules are explained in the UI and the docs.
+- The change log drains a large backlog within hours instead of weeks.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.3.0) — `primodel-8.3.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.3.0
+```
+
 ## v8.2.0 — 2026-11-18
 
 ## New
