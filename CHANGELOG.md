@@ -1,3 +1,28 @@
+## v8.2.0 — 2026-11-18
+
+## New
+
+- A store's change log is pruned automatically after a retention window (7 days by default) when no delivery binding needs the rows.
+- System administrators can preview and trim a store's change log from the data store page or through MCP; every trim is audited.
+- A new or re-enabled delivery binding starts from now by default, and shows how far back it can replay.
+
+## Improved
+
+- SFTP and S3 sources delete, move or archive a file only after its rows are committed, so a failed run leaves the file in place.
+- Pipeline runs, previews and MCP tools check that the referenced connections are still allowed for the caller.
+- Startup fails with a clear message when the object store folder can't be written.
+
+## Fixed
+
+- Effective-from and effective-until dates keep their calendar date regardless of the server's time zone.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.2.0) — `primodel-8.2.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.2.0
+```
+
 ## v8.1.1 — 2026-11-17
 
 ## Fixed
