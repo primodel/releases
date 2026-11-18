@@ -1,3 +1,25 @@
+## v8.3.1 — 2026-11-18
+
+## New
+
+- Field paths can address keys containing dots or slashes with bracket syntax, e.g. translations["white/blue"].
+- An MCP tool lists the registered connections a caller may use, so agents can pick a cluster or database for a pipeline step.
+- Unnest splits XML repeated elements and Parquet lists the same way it splits JSON arrays.
+
+## Fixed
+
+- JSON objects and arrays mapped to a text field land as JSON text again, instead of being stored as empty. Re-run affected pipelines to restore the values.
+- A value that can't be converted to its target type is quarantined with a reason, never silently stored as empty.
+- Change-log pruning on large logs no longer times out, and an index is added in the background without blocking writes.
+- The lineage toolbar's pipelines toggle is no longer clipped, and edge tooltips show the pipeline name and its status on separate lines.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.3.1) — `primodel-8.3.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.3.1
+```
+
 ## v8.3.0 — 2026-11-18
 
 ## New
