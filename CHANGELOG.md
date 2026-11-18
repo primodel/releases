@@ -1,3 +1,33 @@
+## v8.4.2 — 2026-11-18
+
+## New
+
+- Data products can be listed, created and validated through MCP tools and model YAML, with the same access rules as the UI.
+
+## Improved
+
+- Table functions take just the query; Primodel generates the function definition around it.
+- Routine background operations no longer flood the audit log; operations a person triggers are still audited.
+
+## Fixed
+
+- Saving a table function twice updates it instead of failing, and a draft that can't be deployed yet says so.
+- The model preview shows a classification raised to match a sensitivity tag before the deploy applies it.
+- Current-version and as-of functions on multi-source effective-dated entities return each source's row instead of dropping all but one.
+- API client authentication failures return a reason code and a correlation id, and the call example matches the client's authentication type.
+- The server no longer fails at startup in development mode, and an effective-dating alert no longer fails when it is sent.
+
+## Security
+
+- Failed API client authentication no longer reveals whether a key exists, through either the response or its timing.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.2) — `primodel-8.4.2-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.2
+```
+
 ## v8.4.1 — 2026-11-18
 
 ## Improved
