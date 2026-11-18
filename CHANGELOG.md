@@ -1,3 +1,21 @@
+## v8.4.1 — 2026-11-18
+
+## Improved
+
+- The platform's period status column is labelled "Period status", so it no longer clashes with an entity's own Status field.
+
+## Fixed
+
+- The "duplicate business keys across sources" warning no longer counts a key's own history or effective-dated periods as duplicates; it only flags keys that really hold data from more than one source.
+- Effective-dated periods with an open start now sort as the oldest period, and changed fields are marked against the period that actually preceded them.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.1) — `primodel-8.4.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.1
+```
+
 ## v8.4.0 — 2026-11-18
 
 ## New
