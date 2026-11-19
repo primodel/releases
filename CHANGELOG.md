@@ -1,3 +1,16 @@
+## v8.4.5 — 2026-11-19
+
+## Fixed
+
+- The Kafka, MongoDB and Pulsar plugins load again; 8.4.4 skipped them at startup.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.5) — `primodel-8.4.5-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.5
+```
+
 ## v8.4.4 — 2026-11-19
 
 ## Fixed
