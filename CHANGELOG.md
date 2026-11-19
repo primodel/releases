@@ -1,3 +1,18 @@
+## v8.5.0 — 2026-11-19
+
+## Improved
+
+- Kafka and Pulsar delivery targets use registered connections, picked like any other connection. Existing targets are converted automatically.
+- The new-connection dialog lists providers by name in one list, and shows providers whose plugin isn't installed as unavailable.
+- Certificate and private-key fields in connection settings accept paste or upload, show type, fingerprint and expiry, and keep private keys write-only.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.5.0) — `primodel-8.5.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.5.0
+```
+
 ## v8.4.6 — 2026-11-19
 
 ## Improved
