@@ -1,3 +1,24 @@
+## v8.4.4 — 2026-11-19
+
+## Fixed
+
+- Table function, data product and webhook access policies can be managed by their authors without administrator rights, and pick users and API clients from a minimal directory.
+- Access policies show existing grants, and granting or revoking access takes effect immediately without leaving unsaved changes.
+- A webhook's adapter connection picker lists only connections of the adapter's provider, and saving a mismatched connection is rejected.
+
+## Security
+
+- Updating a table function or data product is authorised against the store it belongs to.
+- Change-log status, preview and trim require dedicated permissions.
+- The user directory endpoint requires a directory permission instead of any signed-in user.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.4) — `primodel-8.4.4-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.4
+```
+
 ## v8.4.3 — 2026-11-19
 
 ## Improved
