@@ -1,3 +1,25 @@
+## v8.4.3 — 2026-11-19
+
+## Improved
+
+- Table function Test, Validate and Deploy explain each column's derived classification, and name any unclassified source field that hides it.
+
+## Fixed
+
+- Table function arguments are written as @name; tests ask for argument values and bind them, and arguments such as limit work everywhere.
+- GraphQL serves the deployed version of a table function, and the editor shows when it has been edited since the last deploy.
+- Deploying a table function uses the text in the editor, and older drafts wrapped in $$ are converted automatically.
+- Table functions enforce their minimum clearance when deciding who can see them in GraphQL.
+- Table function errors explain syntax, parameter and signature problems instead of a generic message.
+- Saving a diagram that shows only some entities no longer fails on relationships to entities that aren't on it, and the canvas shows entity names instead of ids.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.3) — `primodel-8.4.3-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.3
+```
+
 ## v8.4.2 — 2026-11-18
 
 ## New
