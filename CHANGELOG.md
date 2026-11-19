@@ -1,3 +1,27 @@
+## v8.4.6 — 2026-11-19
+
+## Improved
+
+- Survivorship pipelines are named after the entities they connect, for example "Survivorship: Worker Source → Worker".
+
+## Fixed
+
+- The data quality Range rule editor loads and saves date bounds, and lays out its Min and Max fields correctly.
+- Remediation no longer lists the same record twice, closes items when a later load passes the rule, and honours the column and rule filters.
+- Pipeline tests show the output of format, compression and encryption steps, keep running past an invalid delivery target, and explain when output is hidden by clearance.
+- Creating or updating a pipeline checks permissions before validating it.
+
+## Security
+
+- Pipeline previews, including through the assistant tools, mask columns by where their data comes from, so renamed or computed columns are masked like their sources.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.4.6) — `primodel-8.4.6-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.4.6
+```
+
 ## v8.4.5 — 2026-11-19
 
 ## Fixed
