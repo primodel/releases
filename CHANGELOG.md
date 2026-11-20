@@ -1,3 +1,16 @@
+## v8.6.0 — 2026-11-20
+
+## New
+
+- Table functions and data products now derive the classification of their output fields from the source fields they read, with reviewed overrides and a lineage view of where each output field comes from.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v8.6.0) — `primodel-8.6.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:8.6.0
+```
+
 ## v8.5.0 — 2026-11-19
 
 ## Improved
