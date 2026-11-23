@@ -1,3 +1,29 @@
+## v9.0.0 — 2026-11-23
+
+## New
+
+- Credentials can be owned by a data domain, a route group or a data store.
+
+## Improved
+
+- Message routing (beta) journeys are grouped per flow with received and last-activity times; the detail view shows arrival, delivery, content, path and headers, and dead letters use the same view.
+- Routing editors use searchable pickers for channels, routes and credentials, with clearer outcome names.
+
+## Fixed
+
+- An unwired "Queued for retry" routing outcome no longer dead-letters a message that is already queued.
+
+## Security
+
+- Clearance is held per data domain only; a data store administrator's previews show values only for domains where they hold a clearance.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v9.0.0) — `primodel-9.0.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:9.0.0
+```
+
 ## v8.6.1 — 2026-11-20
 
 Maintenance release.
