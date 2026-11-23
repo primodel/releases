@@ -1,3 +1,16 @@
+## v9.0.1 — 2026-11-23
+
+## Fixed
+
+- Route changes and recipient updates now reach every running node immediately; previously most were only picked up after a restart.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v9.0.1) — `primodel-9.0.1-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:9.0.1
+```
+
 ## v9.0.0 — 2026-11-23
 
 ## New
