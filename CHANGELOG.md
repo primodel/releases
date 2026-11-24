@@ -1,3 +1,30 @@
+## v9.2.0 — 2026-11-24
+
+## New
+
+- Message routing can guarantee delivery per recipient, either at least once or at most once, and deliveries that end in doubt are held as dead letters you resolve with a recorded reason.
+- Route groups can retain message payloads for a set number of days, and each message in a journey shows its content with audited view and download.
+
+## Improved
+
+- Encryption keys now upgrade automatically to the strongest available protection, rotate on a schedule, and are retired only when no node or retained message still needs them.
+- Message headers and failure reasons are encrypted at rest.
+
+## Fixed
+
+- A failover to another endpoint of the same recipient no longer risks a duplicate delivery under at-most-once.
+
+## Security
+
+- Nodes with stale keys refuse to encrypt, and a locally derived key encryption key is never stored.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v9.2.0) — `primodel-9.2.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:9.2.0
+```
+
 ## v9.1.0 — 2026-11-24
 
 ## New
