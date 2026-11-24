@@ -1,3 +1,34 @@
+## v9.1.0 — 2026-11-24
+
+## New
+
+- Receivers unify HTTP notification, SFTP polling and subscription intake in one place, with a single kind filter and detail page.
+- Route groups can share channels so another group can publish into them, without gaining read access.
+- Around thirty message-routing operations are available to MCP clients.
+- Journey payloads can be viewed formatted, copied in full and downloaded; dead-letter repair supports download, upload and editing.
+
+## Improved
+
+- The routing topology opens at a readable zoom, anchored at the start of the main flow.
+- Duration values can be added in routing expressions.
+
+## Fixed
+
+- Concurrent survivorship updates no longer lose a version.
+- Raw JSON values are now appended correctly when loading into SQL Server.
+- Cross-store migration verification now compares hashes consistently.
+
+## Security
+
+- Route-group boundaries are enforced for recipient resolution and for legacy intake endpoints.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v9.1.0) — `primodel-9.1.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:9.1.0
+```
+
 ## v9.0.1 — 2026-11-23
 
 ## Fixed
