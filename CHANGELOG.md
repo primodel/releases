@@ -1,3 +1,38 @@
+## v9.3.0 — 2026-11-24
+
+## New
+
+- Messages delivered from message routing into an entity are now batched and bulk-loaded, so high message rates no longer cost one database round trip per message.
+- Kafka streaming pipelines into append-only entities load directly into the table for much higher throughput.
+- Messages a streaming pipeline cannot ingest are set aside with their reason instead of stalling or being dropped, and can be sent to a dead-letter destination and replayed.
+- A streaming pipeline pauses itself, with a reason, when too many consecutive messages cannot be ingested.
+- Route authors can test-run a route against a sample message and see what each step would do, without delivering anything.
+- Kafka and Redpanda sources are streaming-only, and a pipeline can forward its dead letters to a routing channel as well as to a Kafka topic.
+
+## Improved
+
+- Failed Kafka offset commits are now logged and counted instead of being silently ignored.
+- Streaming pipelines show a streaming card with readable throughput and lag, and open dead letters use one shared list with the same wording everywhere.
+- Errors for a rejected row now name the row number.
+
+## Fixed
+
+- Changes written by message routing now trigger change-driven pipelines and entity-change receivers.
+- Kafka streaming pipelines set to append-only now load as append-only.
+- A streaming window's position is saved only after its rows are ingested, so a failed ingest no longer skips messages, and a wrong-typed row is set aside on its own.
+- The last window of a quiet stream is flushed, resuming a pipeline restarts a faulted stream, and the Kafka connection test uses the configured port.
+
+## Security
+
+- Outbound connections to private hosts now honour the egress allowlist.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v9.3.0) — `primodel-9.3.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:9.3.0
+```
+
 ## v9.2.0 — 2026-11-24
 
 ## New
