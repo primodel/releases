@@ -1,3 +1,35 @@
+## v10.0.0 — 2026-11-25
+
+## Breaking
+
+- Streaming sources and broker consumers are now message pumps; plugins built for an earlier SDK need the 6.0 release of their package.
+
+## New
+
+- Message routing is generally available and enabled on every installation.
+- AI agents connecting over MCP receive a short guide to Primodel's modelling, classification and querying conventions.
+
+## Improved
+
+- Streaming pipelines resume exactly after the last committed message of every lane, including SQL Server, MySQL, MongoDB and Kinesis sources.
+- Pipelines on brokers can run several workers at once through Max workers.
+- Saving or validating a data product warns when its SQL reads an effective-dated or history entity's raw table, and names the functions to use instead.
+
+## Fixed
+
+- Setting up a SQL Server data store no longer fails when several databases are created at the same moment.
+- Iceberg tables written to the lake can be read by DuckDB again after rows were deleted; the delete files now identify the key columns correctly.
+- Route validation now checks route-group ownership of channels and recipients in its dry run.
+- Payload objects held for claim checks are re-sealed onto the current key version.
+- Routing nodes no longer lose partition ownership while taking over many partitions at once, and a slow shutdown can no longer release a partition another node has taken over.
+
+**SBOM:** download from the [release page](https://github.com/primodel/releases/releases/tag/v10.0.0) — `primodel-10.0.0-linux-amd64.spdx.json` · `linux-arm64` · combined.
+
+**Signing key:** [`primodel.pub`](./primodel.pub) — verify offline (no Fulcio/Rekor access needed):
+```
+cosign verify --key primodel.pub ghcr.io/primodel/primodel:10.0.0
+```
+
 ## v9.3.0 — 2026-11-24
 
 ## New
